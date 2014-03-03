@@ -1,0 +1,19 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: mymaths
+  pool: 5
+  username: root
+  password:
+  socket: <%= ENV['DEVELOPMENT_DB_SOCKET'] %>
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: mymaths_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  socket: <%= ENV['TEST_DB_SOCKET'] %>
