@@ -1,0 +1,23 @@
+%h1 New topic name
+
+= form_for :topic_name, url: topic_names_path do |f|
+  - if @topic_name.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@topic_name.errors.count, "error")
+        prohibited
+        this topic name from being saved:
+      %ul
+        - @topic_name.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.label :topic 
+    %br/
+    = f.text_field :name
+  %p
+    = f.submit
+= link_to 'Back', topic_names_path

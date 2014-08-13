@@ -1,0 +1,21 @@
+%h1 Edit topic name
+
+= form_for :topic_name, url: topic_name_path(@topic_name), method: :put do |f|
+  - if @topic_name.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@topic_name.errors.count, "error")
+        prohibited
+        this topic from being saved:
+      %ul
+        - @topic_name.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.submit
+= link_to 'View topic name', topic_name_path
+|
+= link_to 'Back to Topic name table', topic_names_path

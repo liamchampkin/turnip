@@ -1,7 +1,19 @@
-
 %h1 Listing Topic Areas
 
-- @topic_areas.each do |topic_area|
-  %ul
-    %li
-      = topic_area.name
+= link_to 'Curriculum', products_path
+|
+= link_to 'Topic area', topic_areas_path
+|
+= link_to 'Topic name', topic_names_path
+
+%table
+  %tr
+    %th Topic Area
+    %th Curriculum
+    %th{colspan: "2"}
+  - @topic_areas.each do |topic_area|
+    %tr
+      %td= topic_area.name
+      %td= topic_area.product_configuration_id
+      %td= link_to 'Show', topic_area_path(topic_area)
+      %td= link_to 'Edit', edit_topic_area_path(topic_area)

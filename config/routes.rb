@@ -1,12 +1,23 @@
 Turnip::Application.routes.draw do
+  get "products/index"
+  get "topic_areas/index"
+  get "topic_names/index"
   get "home/index"
 
-  resources :topic_areas do
-    resources :topic_names do
-      resources :topic_name_tasks do
-        resources :tasks
+  resources :products do
+    resources :topic_areas do
+      resources :topic_names do
+        resources :topic_name_tasks do
+          resources :tasks
+        end
       end
     end
+  end
+
+  resources :topic_names do
+  end
+
+  resources :topic_areas do
   end
 
   # The priority is based upon order of creation:

@@ -1,0 +1,17 @@
+%h1 Listing curriculums
+
+= link_to 'Curriculum', products_path
+|
+= link_to 'Topic area', topic_areas_path
+|
+= link_to 'Topic name', topic_names_path
+
+%table
+  %tr
+    %th Curriculum
+    %th{colspan: "1"}
+  - @product_configurations.each do |product_configuration|
+    %tr
+      %td= link_to product_configuration.name
+      %td= link_to 'Show', product_path(product_configuration)
+      %td= link_to 'Edit', edit_product_path(product_configuration)
