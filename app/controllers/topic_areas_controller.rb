@@ -7,4 +7,8 @@ class TopicAreasController < ApplicationController
 
   end
 
+  def reversecurriculum
+    index! { @topic_areas = TopicArea.reverse }
+  end
+
 end
