@@ -12,6 +12,6 @@
     %th{colspan: "1"}
   - @product_configurations.each do |product_configuration|
     %tr
-      %td= link_to product_configuration.name
+      %td= link_to product_configuration.name, :controller => "topic_areas", :action => "index", :scope => :reverse
       %td= link_to 'Show', product_path(product_configuration)
       %td= link_to 'Edit', edit_product_path(product_configuration)

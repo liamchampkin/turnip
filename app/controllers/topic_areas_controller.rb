@@ -1,6 +1,7 @@
 class TopicAreasController < ApplicationController
   def index
-	@topic_areas = TopicArea.all
+	@topic_areas = TopicArea.reverse
+  #@topic_areas = TopicArea.all
   end
 
   def show
