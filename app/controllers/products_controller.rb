@@ -5,4 +5,6 @@ class ProductsController < ApplicationController
   def show
     @product_configuration = ProductConfiguration.find(params[:id])
   end
+
+
 end
